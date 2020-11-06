@@ -13,8 +13,9 @@ public class TestDrivenDevelopment {
             this.amount = amount;
         }
 
-        void times(int multiplier){
+        Dollar times(int multiplier){
             amount *= multiplier;
+            return new Dollar(amount * multiplier);
         }
     }
 
@@ -22,7 +23,9 @@ public class TestDrivenDevelopment {
     @Test
     public void testMultiplication(){
         Dollar five = new Dollar(5);
-        five.times(2);
-        assertEquals(10, five.amount);
+        Dollar product = five.times(2);
+        assertEquals(10, product.amount);
+        product = five.times(3);
+        assertEquals(15, product.amount);
     }
 }
