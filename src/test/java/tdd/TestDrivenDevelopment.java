@@ -14,7 +14,6 @@ public class TestDrivenDevelopment {
         }
 
         Dollar times(int multiplier){
-            amount *= multiplier;
             return new Dollar(amount * multiplier);
         }
     }
